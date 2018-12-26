@@ -25,18 +25,36 @@ weight = 7
   icon = "scroll"
   icon_pack = "fas"
   name = "Simple"
-  description = "Actors are transactional units of state and logic of your application."
+  description = "Use the tools that you already know to implement your application. It's only based on standard features of ES6 like classes and Promises."
   
 [[feature]]
-  icon = "dragon"
+  icon = "bolt"
   icon_pack = "fas"
   name = "Performant"
-  description = "Actors are async by default"  
+  description = "Actors are async and non-blocking by default. Write fast code that can handle thousands of messages in parallel without harming other actors."  
   
 [[feature]]
   icon = "dungeon"
   icon_pack = "fas"
   name = "Extensible"
-  description = "built on top of objects, actor classes can be inherited, composed and injected."
+  description = "Designed to be easy to extend and adapt, implement your own materializers to add persistence or rendering to your actors."
+
+[[feature]]
+  icon = "shield-alt"
+  icon_pack = "fas"
+  name = "Type-safe"
+  description = "Implemented in TypeScript, gives you the ability to write safe and easy to understand code. Your editor will give you realistic and useful suggestions easily thanks to TypeScript typings."
+
+[[feature]]
+  icon = "heart"
+  icon_pack = "fas"
+  name = "Runs everywhere"
+  description = "Because it uses only standard ES6 features, you can run it in the frontend and backend easily."
+
+[[feature]]
+  icon = "feather"
+  icon_pack = "fas"
+  name = "Lightweight"
+  description = "A ready-to-run library that is 14KB minified (with Uglify3)"
 
 +++

@@ -21,10 +21,10 @@ weight = 3
 #   Deactivate by commenting out parameters, prefixing lines with `#`.
 [cta]
   url = "./post/getting-started/"
-  label = '<i class="fas fa-download"></i> Install Now'
+  label = '<i class="fas fa-download"></i> Quick Start'
 +++
 
-The  TypeScript/JavaScript library for building software using the actor system model
+The JavaScript library for building software with the Actor Model
 <div class="mt-3">
   <a class="github-button" href="https://github.com/tarantx/tarant" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a>
 </div>
