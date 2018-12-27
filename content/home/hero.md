@@ -21,7 +21,7 @@ weight = 3
 #   Deactivate by commenting out parameters, prefixing lines with `#`.
 [cta]
   url = "./tutorial/getting-started/"
-  label = '<i class="fas fa-download"></i> Quick Start'
+  label = '<i class="fas fa-book"></i> Quick Start'
 +++
 
 The JavaScript library for building software with the Actor Model
