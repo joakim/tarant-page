@@ -1,6 +1,6 @@
 +++
 title = "Getting Started"
-date = 2017-01-01T00:00:00
+date = 2018-12-27T00:00:00
 
 [header]
 image = ""
@@ -90,7 +90,7 @@ for complex applications. You can see them in the [main documentation](/tutorial
 You can also take a look [at the examples repository](https://github.com/tarantx/Typescript-Examples), 
 to download ready to start examples where you can play and investigate more about actors.
 
-# CodePen
+## CodePen
 
 If you want to see a similar CodePen, to run the example and change it, feel free to use this one:
 
