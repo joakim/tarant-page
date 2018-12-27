@@ -89,3 +89,10 @@ for complex applications. You can see them in the [main documentation](/tutorial
 
 You can also take a look [at the examples repository](https://github.com/tarantx/Typescript-Examples), 
 to download ready to start examples where you can play and investigate more about actors.
+
+# CodePen
+
+If you want to see a similar CodePen, to run the example and change it, feel free to use this one:
+
+<p data-height="320" data-theme-id="0" data-slug-hash="YdxWJP" data-default-tab="js,result" data-user="kmruiz" data-pen-title="tarant pinger example" class="codepen">See the Pen <a href="https://codepen.io/kmruiz/pen/YdxWJP/">tarant pinger example</a> by Kevin Mas Ruiz (<a href="https://codepen.io/kmruiz">@kmruiz</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
