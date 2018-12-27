@@ -105,7 +105,7 @@ enableGitInfo = false
   #   Choose from `default`, `ocean`, `forest`, `dark`, `apogee`, `1950s`, `coffee`, `cupcake`.
   color_theme = "dark"
   # Enable users to switch between day and night mode?
-  day_night = true
+  day_night = false
 
   # Font style.
   #   Choose from `default`, `classic`, or `playfair`.
@@ -115,14 +115,14 @@ enableGitInfo = false
   description = " TypeScript/JavaScript library for building software using the actor system model"
 
   # Default image for social sharing and search engines. Place image in `static/img/` folder and specify image name here.
-  sharing_image = ""
+  sharing_image = "logo.png"
 
   # Twitter username (without @). Used when a vistor shares your site on Twitter.
   twitter = ""
 
   # Diplay a logo in navigation bar rather than title (optional).
   #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
-  logo = ""
+  logo = "logo_name.png"
 
   # Date and time format (refer to https://sourcethemes.com/academic/docs/customization/#date-format )
   #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
@@ -302,7 +302,7 @@ enableGitInfo = false
   weight = 4
 
 [[menu.main]]
-  name = "Github"
+  name = "<i class='fab fa-github'></i>"
   url = "https://github.com/tarantx"
   weight = 6
 
