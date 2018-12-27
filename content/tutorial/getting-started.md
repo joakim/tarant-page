@@ -85,7 +85,7 @@ system.free()
 ## What's next
 
 There are several features that were not covered in this getting started guide, but they can be useful
-for complex applications. You can see them in the [main documentation](/tutorial/_index.md).
+for complex applications. You can see them in the [main documentation](/tutorial/).
 
 You can also take a look [at the examples repository](https://github.com/tarantx/Typescript-Examples), 
 to download ready to start examples where you can play and investigate more about actors.
