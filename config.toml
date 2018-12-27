@@ -302,6 +302,11 @@ enableGitInfo = false
   weight = 4
 
 [[menu.main]]
+  name = "Showcases"
+  url = "/showcases/"
+  weight = 4
+
+[[menu.main]]
   name = "<i class='fab fa-github'></i>"
   url = "https://github.com/tarantx"
   weight = 6
