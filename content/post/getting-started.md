@@ -18,10 +18,10 @@ The only step needed for using Tarant is installing the library. It's already pu
 so you can download it either using npm or yarn:
 
 ```sh
-npm install tarant tslib --save
+npm install tarant --save
 ```
 ```sh
-yarn add tarant tslib
+yarn add tarant
 ```
 
 Now you are ready to start.
