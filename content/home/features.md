@@ -55,6 +55,6 @@ weight = 7
   icon = "feather"
   icon_pack = "fas"
   name = "Lightweight"
-  description = "A ready-to-run library that is 14KB minified (with Uglify3)"
+  description = "A ready-to-run library that is 10KB minified (using Uglify3 and rollup)"
 
 +++
