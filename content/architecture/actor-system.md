@@ -1,10 +1,10 @@
 +++
-title = "Actor System"
+title = "Actor Systems"
 date = 2018-11-28T00:00:00
 
 [header]
 image = ""
-caption = "Actor System"
+caption = "Actor Systems"
 +++
 
 Actor Systems hold all the information about the location of all the actors on an application, even if they are
