@@ -1,10 +1,10 @@
 +++
-title = "Pub Sub for Actors"
+title = "PubSub for Actors"
 date = 2018-12-27T00:00:00
 
 [header]
 image = ""
-caption = "Pub Sub for Actors"
+caption = "PubSub for Actors"
 +++
 
 This example demonstrates how Actors process messages independently. When you press the `+1` button, you will see how
