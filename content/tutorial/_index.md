@@ -14,4 +14,4 @@ image = ""
 caption = ""
 +++
 
-## Patience this page is under construction
+We are always improving the documentation, but we can offer the following tutorials about tarant.

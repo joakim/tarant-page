@@ -293,11 +293,21 @@ enableGitInfo = false
 
 [[menu.main]]
   name = "Home"
-  url = "#about"
+  url = "#hero"
   weight = 1
 
 [[menu.main]]
-  name = "Tutorials"
+  name = "Modules"
+  url = "#module-tarant"
+  weight = 2
+
+[[menu.main]]
+  name = "Try It!"
+  url = "#try-it"
+  weight = 3
+
+[[menu.main]]
+  name = "Tutorial"
   url = "/tutorial/"
   weight = 4
 
@@ -309,7 +319,7 @@ enableGitInfo = false
 [[menu.main]]
   name = "<i class='fab fa-github'></i>"
   url = "https://github.com/tarantx"
-  weight = 6
+  weight = 5
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
