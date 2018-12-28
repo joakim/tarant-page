@@ -317,9 +317,14 @@ enableGitInfo = false
   weight = 4
 
 [[menu.main]]
+  name = "Architecture"
+  url = "/architecture/"
+  weight = 5
+
+[[menu.main]]
   name = "<i class='fab fa-github'></i>"
   url = "https://github.com/tarantx"
-  weight = 5
+  weight = 6
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.

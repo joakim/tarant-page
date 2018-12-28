@@ -1,6 +1,6 @@
 +++
 title = "Getting Started"
-date = 2018-12-27T00:00:00
+date = 2018-11-30T00:00:00
 
 [header]
 image = ""
