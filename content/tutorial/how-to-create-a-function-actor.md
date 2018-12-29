@@ -19,7 +19,7 @@ However, there are some drawbacks compared to normal actors:
 
 * They can not subscribe to topics
 * They are stateless, so some materializers won't work
-* They **must** return promises
+* They **must** return promises or nothing at all (like callbacks)
 
 To create an actor function, [you need a running actor system](/tutorial/how-to-create-an-actor-system):
 
