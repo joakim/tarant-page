@@ -27,5 +27,6 @@ weight = 3
 The JavaScript library for building software with the Actor Model
 <div class="mt-3">
   <a class="github-button" href="https://github.com/tarantx/tarant" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a>
+  <a href="https://gitter.im/tarantx/general?utm_source=share-link&utm_medium=link&utm_campaign=share-link"><img src="https://img.shields.io/gitter/room/TechnologyAdvice/Stardust.svg" />
 </div>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
