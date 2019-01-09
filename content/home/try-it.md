@@ -11,7 +11,7 @@ title = "Try It!"
 subtitle = ""
 
 # Order that this section will appear in.
-weight = 60
+weight = 40
 
 +++
 

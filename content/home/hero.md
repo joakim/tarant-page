@@ -19,14 +19,20 @@ weight = 3
 # Call to action button (optional).
 #   Activate the button by specifying a URL and button label below.
 #   Deactivate by commenting out parameters, prefixing lines with `#`.
-[cta]
-  url = "./tutorial/getting-started/"
-  label = '<i class="fas fa-book"></i> Quick Start'
+#[cta]
+#  url = "./tutorial/getting-started/"
+#  label = '<i class="fas fa-book"></i> Quick Start'
 +++
 
 The JavaScript library for building software with the Actor Model
-<div class="mt-3">
-  <a class="github-button" href="https://github.com/tarantx/tarant" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a>
-  <a href="https://gitter.im/tarantx/general?utm_source=share-link&utm_medium=link&utm_campaign=share-link"><img src="https://img.shields.io/gitter/room/TechnologyAdvice/Stardust.svg" />
-</div>
+
+<a class="github-button" href="https://github.com/tarantx/tarant" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a>
+
+<a href="https://gitter.im/tarantx/general?utm_source=share-link&utm_medium=link&utm_campaign=share-link" class="btn btn-outline-light btn-lg">
+  <i class="fab fa-gitter"></i> Guitter
+</a>
+
+<a href="./tutorial/getting-started/" class="btn btn-outline-light btn-lg">
+  <i class="fas fa-book"></i> Quick Start
+</a>
 <script async defer src="https://buttons.github.io/buttons.js"></script>
