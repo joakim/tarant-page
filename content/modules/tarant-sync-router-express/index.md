@@ -1,6 +1,6 @@
 +++
 date = 2017-10-29T00:00:00
-title = " Tarant Sync Client"
+title = " Tarant Sync Router Express"
 url_code = "https://github.com/tarantx/tarant-sync-router-express"
 tags = ["sync","materializer","resolver","tarant"]
 +++
