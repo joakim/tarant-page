@@ -29,7 +29,7 @@ The JavaScript library for building software with the Actor Model
 <a class="github-button" href="https://github.com/tarantx/tarant" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a>
 
 <a href="https://gitter.im/tarantx/general?utm_source=share-link&utm_medium=link&utm_campaign=share-link" class="btn btn-outline-light btn-lg">
-  <i class="fab fa-gitter"></i> Guitter
+  <i class="fab fa-gitter"></i> Gitter
 </a>
 
 <a href="./tutorial/getting-started/" class="btn btn-outline-light btn-lg">

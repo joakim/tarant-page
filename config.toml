@@ -298,7 +298,7 @@ enableGitInfo = false
 
 [[menu.main]]
   name = "Modules"
-  url = "#module-tarant"
+  url = "#modules"
   weight = 2
 
 [[menu.main]]
