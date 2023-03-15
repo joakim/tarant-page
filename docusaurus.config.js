@@ -132,9 +132,9 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       algolia: {
-        appId: '5OO1ZU522Y',
-        apiKey: '1a657d79f462a65675d881b1cbf3a6d4',
-        indexName: 'tarantx'
+        appId: '1TS68LAIFD',
+        apiKey: 'e859350893308faf007cbbb1b2ecf5bb',
+        indexName: 'tarant-js'
       }
     }),
 };
