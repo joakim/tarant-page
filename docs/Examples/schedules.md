@@ -2,6 +2,8 @@
 sidebar_position: 3
 ---
 
+# Schedules
+
 This example shows how actors can schedule the execution of messages dynamically.
 
 ## Features used

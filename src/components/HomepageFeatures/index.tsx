@@ -10,29 +10,56 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_mountain.svg').default,
+    title: 'Simple',
+    Svg: require('@site/static/img/undraw_simple.svg').default,
     description: (
       <>
-        No need to change your server or code just add our middleware and start querying what you care about.
+        Use the tools that you already know to implement your application. It's only based on standard features of ES6 like classes and Promises.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_tree.svg').default,
+    title: 'Performant',
+    Svg: require('@site/static/img/undraw_fast.svg').default,
     description: (
       <>
-        RestFQL focus on filtering information per the need of the consumer without complex integrations or architectural changes.
+        Actors are async and non-blocking by default. Write fast code that can handle thousands of messages in parallel without harming other actors.
       </>
     ),
   },
   {
-    title: 'Any Server',
-    Svg: require('@site/static/img/undraw_computer.svg').default,
+    title: 'Extensible',
+    Svg: require('@site/static/img/undraw_extensible.svg').default,
     description: (
       <>
-        RestFQL can be added as a middleware to any rest base server with the simple use of a middleware.
+        Designed to be easy to extend and adapt, implement your own materializers to add persistence or rendering to your actors.
+      </>
+    ),
+  },
+  {
+    title: 'Type-safe',
+    Svg: require('@site/static/img/undraw_typesafe.svg').default,
+    description: (
+      <>
+        Implemented in TypeScript, gives you the ability to write safe and easy to understand code. Your editor will give you realistic and useful suggestions easily thanks to TypeScript typings.
+      </>
+    ),
+  },
+  {
+    title: 'Runs everywhere',
+    Svg: require('@site/static/img/undraw_everywhere.svg').default,
+    description: (
+      <>
+        Because it uses only standard ES6 features, you can run it in the frontend and backend easily.
+      </>
+    ),
+  },
+  {
+    title: 'Lightweight',
+    Svg: require('@site/static/img/undraw_light.svg').default,
+    description: (
+      <>
+        A ready-to-run library that is 10KB minified
       </>
     ),
   },

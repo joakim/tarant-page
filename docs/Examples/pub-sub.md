@@ -2,6 +2,8 @@
 sidebar_position: 2
 ---
 
+# Pub Sub
+
 This example demonstrates how Actors process messages independently. When you press the `+1` button, you will see how
 there are two counters, one that updates fast, and one that updates slower.
 

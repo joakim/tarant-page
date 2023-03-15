@@ -1,6 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
+
+# Create An Actor System
 
 Actor Systems hold all the information about the location of all the actors on an application, even if they are
 in memory or not. They are composed of:

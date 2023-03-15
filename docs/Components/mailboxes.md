@@ -1,6 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 6
 ---
+
+# Mailboxes
 
 Mailboxes are a queue of messages with guaranteed ordering. Mailboxes have a set of useful properties that make them
 really powerful:

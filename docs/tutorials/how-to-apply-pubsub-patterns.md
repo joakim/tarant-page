@@ -1,6 +1,8 @@
 ---
-sidebar_position: 6
+sidebar_position: 4
 ---
+
+# Apply Pub/Sub Patterns
 
 Tarant implements a basic, but powerful pubsub mechanism named topics. A topic is a stream of events that are sent to 
 all subscribers of the topic. For example, if we send the event `hello` to the topic `salutations`, and there are 

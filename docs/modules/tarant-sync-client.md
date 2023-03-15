@@ -1,6 +1,9 @@
 ---
 sidebar_position: 4
 ---
+
+# Tarant Sync Client
+
 ## Motivation
 
 Provide the capabilities to actors to synchronize with a backend.

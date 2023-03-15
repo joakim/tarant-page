@@ -2,8 +2,10 @@
 sidebar_position: 1
 ---
 
-[Tarant](https://www.tarant.io/) is a TypeScript/JavaScript library for building software using the actor system model.
-You can visit the home page for more information and a more complete quick start guide: https://www.tarant.io/
+# Tarant
+
+[Tarant](https://www.tarant.js.org/) is a TypeScript/JavaScript library for building software using the actor system model.
+You can visit the home page for more information and a more complete quick start guide: https://www.tarant.js.org/
 
 * **Actors are easy to reason about**: An actor is the unit of state and logic of your application.
 They are transactional, so you don't need to handle state rollbacks in case of errors.

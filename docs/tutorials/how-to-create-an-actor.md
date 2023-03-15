@@ -1,6 +1,8 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 ---
+
+# Create An Actor
 
 Actors represent the main unit of logic in the Actor Model. They are transactional, asynchronous and safe. When you work
 with actors, you have the following guarantees:

@@ -1,6 +1,8 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 ---
+
+# Materializers
 
 Materializers are hooks over the lifecycle of an actor. They are used to add implicit infrastructure logic to an actor. Some
 use case of materializers are, actually, two main tarant modules [tarant-vue](https://github.com/tarantx/tarant-vue) and

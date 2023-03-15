@@ -2,6 +2,8 @@
 sidebar_position: 6
 ---
 
+# Tarant Vue
+
 ## Motivation
 
 Provide the capabilities to actors to be render using the vue framework.

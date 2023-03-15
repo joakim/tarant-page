@@ -1,6 +1,8 @@
 ---
-sidebar_position: 6
+sidebar_position: 4 
 ---
+
+# Supervisors
 
 Supervisors are the responsible of handling actor failures and deciding the strategy to recover. There are two types
 of supervisors.

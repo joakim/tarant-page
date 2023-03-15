@@ -1,6 +1,9 @@
 ---
 sidebar_position: 3
 ---
+
+# Tarant Local Storage
+
 ## Motivation
 
 Usually complex applications need to store offline part of the state, so it can be synced back or reused later. This

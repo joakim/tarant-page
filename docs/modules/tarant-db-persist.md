@@ -2,6 +2,8 @@
 sidebar_position: 2
 ---
 
+# Tarant DB Persist
+
 ## Motivation
 
 Provide the capabilities to actors on the backend to be persisted using waterline adapters.

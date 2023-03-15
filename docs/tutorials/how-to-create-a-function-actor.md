@@ -1,6 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 3
 ---
+
+# Create A Function Actor
 
 Sometimes creating a whole actor is not needed because the problem to solve is relatively simple and a set of
 functions is enough. Tarant contemplates this scenario allowing the developer to write `function actors`, that

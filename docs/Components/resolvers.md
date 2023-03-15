@@ -1,6 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 3
 ---
+
+# Resolvers
 
 Resolvers let us find actors that have been persisted in external systems, like databases or storages. One example
 of resolver, is the [tarant-local-storage](https://github.com/tarantx/tarant-local-storage) module, which let us recover

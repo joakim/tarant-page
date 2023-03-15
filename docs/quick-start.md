@@ -2,6 +2,8 @@
 sidebar_position: 2
 ---
 
+# Quick Start
+
 Tarant is a JavaScript library that implements the Actor Model, which makes concurrent programming easy to understand
 and maintain. Thus, the most important building block of Tarant is the Actor. This getting started guide will walk you
 through the basic flow of starting an Actor System (which holds actor references) and your first actor, in a running
