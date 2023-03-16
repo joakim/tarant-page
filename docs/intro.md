@@ -15,4 +15,4 @@ if you are thinking to implement a BFF or use graphQL give it a try to see if it
 
 ## Ready to get started?
 
-Find out how to start in 5 minutes with our [quick start guide](/docs/quick-start). Or visit the [page](https://www.tarant.com) and [its repo](https://github.com/tarantx) and start exploring.
+Find out how to start in 5 minutes with our [quick start guide](/docs/quick-start). Or visit the [page](https://www.tarant.dev) and [its repo](https://github.com/tarantx) and start exploring.

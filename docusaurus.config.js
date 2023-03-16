@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Tarant',
   tagline: 'The Typescript/JavaScript library for building software with the Actor Model',
-  url: 'https://www.tarant.com',
+  url: 'https://www.tarant.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
