@@ -14,6 +14,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from '../../../components/LoginButton/index';
 import LogoutButton from '../../../components/LogoutButton/index';
 import styles from './styles.module.css';
+
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved
   return useThemeConfig().navbar.items;
@@ -36,16 +37,14 @@ function NavbarContentLayout({left, right}) {
   );
 }
 export default function NavbarContent() {
-  const { isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated } = useAuth0();
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
   const searchBarItem = items.find((item) => item.type === 'search');
   const filteredLeftItems = isAuthenticated
     ? leftItems.map(item => ({...item, label: item.label.replace("_secure", "")}))
-    : leftItems.filter(item => !item.label.includes("_secure"))
-  
-    console.log(filteredLeftItems)
+    : leftItems
   return (
     <NavbarContentLayout
       left={
