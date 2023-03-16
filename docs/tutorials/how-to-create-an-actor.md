@@ -53,7 +53,7 @@ class Person extends Actor {
 ```
 
 This Actor type Person will handle two messages with the specified logic (just printing something into the console). To
-instantiate an actor, [we need a running actor system](/tutorial/how-to-create-an-actor-system). We are going to create an
+instantiate an actor, [we need a running actor system](/docs/tutorials/how-to-create-an-actor-system). We are going to create an
 Actor System with the default configuration:
 
 ```js
@@ -124,4 +124,4 @@ It's important to note that calling an actor method is not a synchronous operati
 always return promises. When you call a method on an actor, the actor will add a new message to it's mailbox, and will be
 processing messages in the mailbox until it's empty.
 
-You can find more information of the architecture in [the architecture page](/architecture/). 
+You can find more information of the architecture in [the components page](/docs/components/actor-system). 

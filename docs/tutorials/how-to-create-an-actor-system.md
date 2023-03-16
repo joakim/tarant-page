@@ -7,11 +7,11 @@ sidebar_position: 1
 Actor Systems hold all the information about the location of all the actors on an application, even if they are
 in memory or not. They are composed of:
 
-* [Materializers](/architecture/materializers)
-* [Resolvers](/architecture/resolvers)
-* [A Top Level Supervisor](/architecture/supervisors)
-* [Fibers](/architecture/fibers)
-* [Mailboxes](/architecture/mailboxes)
+* [Materializers](/docs/components/materializers)
+* [Resolvers](/docs/components/resolvers)
+* [A Top Level Supervisor](/docs/components/supervisors)
+* [Fibers](/docs/components/fibers)
+* [Mailboxes](/docs/components/mailboxes)
 
 There are two main ways to create an Actor System in tarant. One uses the default configuration, and the other
 one lets the developer configure most of the advanced fields for customizing the behaviour.

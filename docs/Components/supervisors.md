@@ -10,7 +10,7 @@ of supervisors.
 ## Top Level Supervisor
 
 The Top Level Supervisor is an object that implements the IActorSupervisor interface. The 
-[Actor System](/architecture/actor-system) delegates all errors to the top level supervisor.
+[Actor System](/docs/Components/actor-system) delegates all errors to the top level supervisor.
 
 ## Actor Supervisor
 

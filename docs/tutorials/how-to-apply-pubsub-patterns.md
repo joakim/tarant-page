@@ -12,7 +12,7 @@ Messages send through a topic are guaranteed to be processed only once by the to
 
 ## How to create a Topic
 
-A Topic, [like an actor](/tutorial/how-to-create-an-actor), has a protocol. All subscribers to that topic need to satisfy also
+A Topic, [like an actor](/docs/tutorials/how-to-create-an-actor), has a protocol. All subscribers to that topic need to satisfy also
 the protocol of the topic. For example, if we have a protocol:
 
 ```js
@@ -57,4 +57,4 @@ topic.onUserRegistered('dante')
 And all subscribers of that topic will receive the message. Is worth to note that a topic is also an actor,
 so all properties of an actor also apply for topics.
 
-Fore a example on how to use PubSub, you can [see the showcase about pubsub](/showcases/pub-sub).
+Fore a example on how to use PubSub, you can [see the showcase about pubsub](/docs/examples/pub-sub).

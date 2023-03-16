@@ -15,4 +15,4 @@ A materializer can implement the following methods:
 * `onBeforeMessage(actor: Actor, message: ActorMessage): void` when the actor is going to process a message.
 * `onAfterMessage(actor: Actor, message: ActorMessage): void` after a message has been processed succesfully.
 * `onError(actor: Actor, message: ActorMessage, error: any): void` when processing a message failed. You can not
-recover from the error from here, for that, you need to use [supervisors](/architecture/supervisors).
+recover from the error from here, for that, you need to use [supervisors](/docs/Components/supervisors).

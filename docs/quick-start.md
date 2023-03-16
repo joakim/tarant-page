@@ -82,7 +82,7 @@ system.free()
 ## What's next
 
 There are several features that were not covered in this getting started guide, but they can be useful
-for complex applications. You can see them in the [main documentation](/tutorial/) and in the [showcases](/showcases/)
+for complex applications. You can see them in the [main documentation](/docs/tutorials/how-to-create-an-actor) and in the [examples](/docs/examples/ping-pong)
 page.
 
 You can also take a look [at the examples repository](https://github.com/tarantx/Typescript-Examples), 
