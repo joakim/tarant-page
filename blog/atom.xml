@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.tarant.com/blog</id>
+    <title>Tarant Blog</title>
+    <updated>2023-03-12T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://www.tarant.com/blog"/>
+    <subtitle>Tarant Blog</subtitle>
+    <icon>https://www.tarant.com/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[website revamp]]></title>
+        <id>https://www.tarant.com/blog/website-revamp</id>
+        <link href="https://www.tarant.com/blog/website-revamp"/>
+        <updated>2023-03-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hello welcome everyone to the first blog post of the revamped website.]]></summary>
+        <content type="html"><![CDATA[<p>Hello welcome everyone to the first blog post of the revamped website.</p>]]></content>
+        <author>
+            <name>kanekotic</name>
+            <uri>https://github.com/kanekotic</uri>
+        </author>
+        <category label="website" term="website"/>
+    </entry>
+</feed>

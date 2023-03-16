@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktarant_page=self.webpackChunktarant_page||[]).push([[6945],{6945:(a,e,t)=>{t.r(e)}}]);
