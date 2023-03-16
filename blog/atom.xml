@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://www.tarant.com/blog</id>
+    <id>https://www.tarant.dev/blog</id>
     <title>Tarant Blog</title>
     <updated>2023-03-12T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://www.tarant.com/blog"/>
+    <link rel="alternate" href="https://www.tarant.dev/blog"/>
     <subtitle>Tarant Blog</subtitle>
-    <icon>https://www.tarant.com/img/favicon.ico</icon>
+    <icon>https://www.tarant.dev/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[website revamp]]></title>
-        <id>https://www.tarant.com/blog/website-revamp</id>
-        <link href="https://www.tarant.com/blog/website-revamp"/>
+        <id>https://www.tarant.dev/blog/website-revamp</id>
+        <link href="https://www.tarant.dev/blog/website-revamp"/>
         <updated>2023-03-12T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Hello welcome everyone to the first blog post of the revamped website.]]></summary>
         <content type="html"><![CDATA[<p>Hello welcome everyone to the first blog post of the revamped website.</p>]]></content>

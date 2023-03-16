@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Tarant Blog</title>
-        <link>https://www.tarant.com/blog</link>
+        <link>https://www.tarant.dev/blog</link>
         <description>Tarant Blog</description>
         <lastBuildDate>Sun, 12 Mar 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,8 +10,8 @@
         <language>en</language>
         <item>
             <title><![CDATA[website revamp]]></title>
-            <link>https://www.tarant.com/blog/website-revamp</link>
-            <guid>https://www.tarant.com/blog/website-revamp</guid>
+            <link>https://www.tarant.dev/blog/website-revamp</link>
+            <guid>https://www.tarant.dev/blog/website-revamp</guid>
             <pubDate>Sun, 12 Mar 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Hello welcome everyone to the first blog post of the revamped website.]]></description>
             <content:encoded><![CDATA[<p>Hello welcome everyone to the first blog post of the revamped website.</p>]]></content:encoded>
