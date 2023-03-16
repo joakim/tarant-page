@@ -44,7 +44,7 @@ export default function NavbarContent() {
   const searchBarItem = items.find((item) => item.type === 'search');
   const filteredLeftItems = isAuthenticated
     ? leftItems.map(item => ({...item, label: item.label.replace("_secure", "")}))
-    : leftItems
+    : leftItems.filter(item => !item.label.includes("_secure"))
   return (
     <NavbarContentLayout
       left={
