@@ -80,6 +80,11 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            href: '/user',
+            label: 'User_secure',
+            position: 'left',
+          },
         ],
       },
       footer: {

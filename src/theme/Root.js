@@ -5,7 +5,6 @@ const privatePages = [""]
 
 // Default implementation, that you can customize
 export default function Root({children}) {
-    console.log(children)
     return <Auth0Provider
     domain="dev-u6zl0gyyil0lqmcm.eu.auth0.com"
     clientId="xuMWdth6SsAXj7KYkJWZufVFUEfIE6Fh"
