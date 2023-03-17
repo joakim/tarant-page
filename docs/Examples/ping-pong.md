@@ -12,6 +12,9 @@ This example shows how actors can call each other without blocking themselves.
 handled asynchronously and non-blocking by Tarant, and messages are guaranteed to be processed in order.
 
 ## Live Example
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-<p data-height="795" data-theme-id="0" data-slug-hash="KbvBqm" data-default-tab="js,result" data-user="kmruiz" data-pen-title="tarant ping pong example" class="codepen">See the Pen <a href="https://codepen.io/kmruiz/pen/KbvBqm/">tarant ping pong example</a> by Kevin Mas Ruiz (<a href="https://codepen.io/kmruiz">@kmruiz</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 
+<iframe height="300" scrolling="no" title="tarant ping pong example" src="https://codepen.io/kmruiz/embed/KbvBqm?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/kmruiz/pen/KbvBqm">
+  tarant ping pong example</a> by Kevin Mas Ruiz (<a href="https://codepen.io/kmruiz">@kmruiz</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>

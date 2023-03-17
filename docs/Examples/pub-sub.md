@@ -19,5 +19,8 @@ handled asynchronously and non-blocking by Tarant, and messages are guaranteed t
 
 ## Live Example
 
-<p data-height="606" data-theme-id="0" data-slug-hash="GPvGEX" data-default-tab="js,result" data-user="kmruiz" data-pen-title="tarant quick-start example" class="codepen">See the Pen <a href="https://codepen.io/kmruiz/pen/GPvGEX/">tarant quick-start example</a> by Kevin Mas Ruiz (<a href="https://codepen.io/kmruiz">@kmruiz</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<iframe height="300" scrolling="no" title="tarant quick-start example" src="https://codepen.io/kmruiz/embed/GPvGEX?default-tab=js%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/kmruiz/pen/GPvGEX">
+  tarant quick-start example</a> by Kevin Mas Ruiz (<a href="https://codepen.io/kmruiz">@kmruiz</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>

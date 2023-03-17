@@ -92,5 +92,8 @@ to download ready to start examples where you can play and investigate more abou
 
 If you want to see a similar CodePen, to run the example and change it, feel free to use this one:
 
-<p data-height="320" data-theme-id="0" data-slug-hash="YdxWJP" data-default-tab="js,result" data-user="kmruiz" data-pen-title="tarant pinger example" class="codepen">See the Pen <a href="https://codepen.io/kmruiz/pen/YdxWJP/">tarant pinger example</a> by Kevin Mas Ruiz (<a href="https://codepen.io/kmruiz">@kmruiz</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<iframe height="300" scrolling="no" title="tarant pinger example" src="https://codepen.io/kmruiz/embed/YdxWJP?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/kmruiz/pen/YdxWJP">
+  tarant pinger example</a> by Kevin Mas Ruiz (<a href="https://codepen.io/kmruiz">@kmruiz</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
