@@ -22,7 +22,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Rest complient filtering language">
+      description="library for building software with the Actor Model">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
