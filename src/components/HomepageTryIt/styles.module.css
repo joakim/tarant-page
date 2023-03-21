@@ -1,0 +1,15 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+  background-color: var(--ifm-color-primary);
+}
+
+.codepen {
+  flex: auto;
+  padding: 2rem 10rem;
+  height: 35rem;
+  background-color: var(--ifm-color-primary);
+}
+
