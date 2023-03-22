@@ -12,7 +12,7 @@ Messages send through a topic are guaranteed to be processed only once by the to
 
 ## How to create a Topic
 
-A Topic, [like an actor](/docs/tutorials/how-to-create-an-actor), has a protocol. All subscribers to that topic need to satisfy also
+A Topic, [like an actor](/docs/how tos/how-to-create-an-actor), has a protocol. All subscribers to that topic need to satisfy also
 the protocol of the topic. For example, if we have a protocol:
 
 ```js

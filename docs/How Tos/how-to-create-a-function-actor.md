@@ -18,7 +18,7 @@ However, there are some drawbacks compared to normal actors:
 * They are stateless, so some materializers won't work
 * They **must** return promises or nothing at all (like callbacks)
 
-To create an actor function, [you need a running actor system](/docs/tutorials/how-to-create-an-actor-system):
+To create an actor function, [you need a running actor system](/docs/how tos/how-to-create-an-actor-system):
 
 ```js
 const system = ActorSystem.default()

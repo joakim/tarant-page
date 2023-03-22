@@ -81,11 +81,15 @@ system.free()
 
 ## What's next
 
-There are several features that were not covered in this getting started guide, but they can be useful
-for complex applications. You can see them in the [main documentation](/docs/tutorials/how-to-create-an-actor) and in the [examples](/docs/examples/ping-pong)
-page.
+If you want a more foundational and fundamental knowledge on how tarant works, how to design enterprise-grade
+applications that can be run in production, take a look at the [Tutorial](/docs/tutorial/designing-a-tarant-application)
 
-You can also take a look [at the examples repository](https://github.com/tarantx/Typescript-Examples), 
+There are several features that were not covered in this getting started guide, but they can be useful
+for complex applications. You can see them in the [How To](/docs/category/how-to) section and in the 
+[Exmaples](/docs/category/examples) page.
+
+
+Additionally can also take a look [at the examples repository](https://github.com/tarantx/Typescript-Examples), 
 to download ready to start examples where you can play and investigate more about actors.
 
 ## CodePen

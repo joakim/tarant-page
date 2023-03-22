@@ -53,7 +53,7 @@ class Person extends Actor {
 ```
 
 This Actor type Person will handle two messages with the specified logic (just printing something into the console). To
-instantiate an actor, [we need a running actor system](/docs/tutorials/how-to-create-an-actor-system). We are going to create an
+instantiate an actor, [we need a running actor system](/docs/how tos/how-to-create-an-actor-system). We are going to create an
 Actor System with the default configuration:
 
 ```js
