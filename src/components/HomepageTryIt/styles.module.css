@@ -1,12 +1,6 @@
-.features {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
 .codepen {
   flex: auto;
   padding: 2rem 0rem;
-  height: 40rem;
+  height: 35rem;
 }
 
