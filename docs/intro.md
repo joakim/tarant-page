@@ -7,11 +7,11 @@ Welcome to the Tarant user guide! This guide shows you how to get started on thi
 
 ## What is Tarant?
 
-
+Tarant is an extensible full-stack actor model that allows you to build aplications focusing in the bussiness logic and allowing the platform to abstract other concepts that are common to all applications (ex. serialization, rendering, networking) through our modules.
 
 ## Is Tarant for me?
 
-if you are thinking to implement a BFF or use graphQL give it a try to see if it fits your use case.
+if you are thinking on creating applications you should give it a try.
 
 ## Ready to get started?
 
