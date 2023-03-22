@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktarant_page=self.webpackChunktarant_page||[]).push([[357],{6834:e=>{e.exports=JSON.parse('{"title":"Examples","slug":"/category/examples","permalink":"/docs/category/examples","navigation":{"previous":{"title":"Tarant Vue","permalink":"/docs/modules/tarant-vue"},"next":{"title":"Ping Pong","permalink":"/docs/Examples/ping-pong"}}}')}}]);
