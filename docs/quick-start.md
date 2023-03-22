@@ -82,7 +82,7 @@ system.free()
 ## What's next
 
 If you want a more foundational and fundamental knowledge on how tarant works, how to design enterprise-grade
-applications that can be run in production, take a look at the [Tutorial](/docs/tutorial/designing-a-tarant-application)
+applications that can be run in production, take a look at the [Tutorial](/docs/tutorial/thinking-in-tarant)
 
 There are several features that were not covered in this getting started guide, but they can be useful
 for complex applications. You can see them in the [How To](/docs/category/how-to) section and in the 
