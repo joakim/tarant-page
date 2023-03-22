@@ -2,11 +2,22 @@
 sidebar_position: 1
 ---
 
-# Designing a Tarant Application
+# Thinking in Tarant
 
 Tarant is a framework which has been designed for performance and easiness of development. However, it's based in the actor model, so some known design patterns 
 change and there are alternatives that simplify the development of applications. In this tutorial, we will walkthrough over the design principles when working with
 actors and tarant.
+
+## Before we start
+
+This tutorial assumes that you have basic knowledge on how TypeScript or JavaScript classes work. You don't need really extensive knowledge on the internals
+of a class, but understanding how to create one is a must. 
+
+If you don't feel comfortable working with classes, we recommend to read the following tutorials first:
+
+* [Introducing JavaScript Objects (MDN)](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects)
+* [Classes in JavaScript (MDN)](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Classes_in_JavaScript)
+* [Classes Reference (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 
 ## What are actors?
 
@@ -157,6 +168,16 @@ But, the question that you might have now is: what happens when I have billions 
 the actor again so it can be used.
 
 Using more persistent memory has important benefits, avoiding fragmentation and improving cacheability. However, this is taken already by tarant, you can just use it.
+When designing an application, just think as your business objects as actors, and that's it. This reasoning is pretty complex at the beginning, but the brain gets used
+to it.
+
+So, to summarise:
+
+* **An actor is similar to an object**: An actor holds both data and behaviour in one place.
+* **An actor is active**: Does not require external stimulus to do business logic.
+* **An actor is concurrency-safe**: You can just send the actor messages from anywhere safely without thinking on race conditions.
+* **An actor is message driven**: An actor does not care where a message is coming from, just that it ends in it's mailbox.
+* **An actor lifecycle is long**: From seconds, to hours, to days, to months, to years.
 
 ------
 
