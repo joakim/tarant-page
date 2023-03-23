@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# A Simple Application
+# Tutorial: A Chat Application
 
 We are going to build a simple chat application during this tutorial. The chat application will use basic JavaScript in the browser with [Lit](https://lit.dev/).
 This concrete example will use [lit-html](https://lit.dev/docs/libraries/standalone-templates/) which is able to render HTML without any specific convention.
