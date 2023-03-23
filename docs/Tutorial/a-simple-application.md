@@ -109,3 +109,193 @@ Now we are going to create our first actor. If you remember the diagram we did b
 both the chat box (where all our messages are going to be rendered), the input box and the button that we will use to send messages to the next chat window.
 
 ![This is the diagram](./images/1-example-app/1-component-interaction.png)
+
+However, we are going to start with baby steps. We will create an actor called ChatWindow that will hold an array of messages. Actors look like ordinary classes,
+but they extend from Actor.
+
+```js
+class ChatWindow extends Actor {
+
+}
+```
+
+To initialise an actor, we use the constructor, as we would do with any ordinary JavaScript class. However, as we are inheriting actor, we need to call the `super` 
+constructor.
+
+```js
+class ChatWindow extends Actor {
+  constructor() {
+    super()
+  }
+}
+```
+
+After the `super` call, we can initialise the actor state. Let's start with an empty array of messages.
+
+```js
+class ChatWindow extends Actor {
+  constructor() {
+    super()
+
+    this.messages = []
+  }
+}
+```
+
+In tarant, all properties are private to the actor. Even actors of the same type can not see the properties of other actors. This is called instance-private
+properties. Only the actor that owns it's properties can see them. This is required to ensure that consumers of the data do not read partial information.
+
+Now, let's create an instance of our actor. 
+
+To create an instance of an actor we use the `ActorSystem.actorOf(className, constructorParameters)` factory method. It will return a new actor of the specified
+type. At the bottom of the file, add the following line:
+
+```js
+const firstChat = system.actorOf(ChatWindow, []);
+```
+
+This will create a new ChatWindow actor and store it in a variable called firstChat. Now we should be able to interact with the actor!
+
+However, there is no behaviour in the actor yet. To add new behaviour we implement `methods`, as ordinary JavaScript methods. Let's create a new method called
+`receive` that will receive a new message from a sender:
+
+```js
+class ChatWindow extends Actor {
+  constructor() {
+    super()
+
+    this.messages = []
+  }
+
+  receive({ sender, content }) {
+    this.messages.push({ sender, content });
+  }
+}
+```
+
+Now we can interact with our actor by sending it a message.
+
+```js
+const firstChat = system.actorOf(ChatWindow, []);
+firstChat.receive({ sender: 'me :D', content: 'Some random message' })
+```
+
+Now, nothing seems to happen, but the actor got a new message and stored it into an array. Let's do something so we can see the result!
+
+## First iteration: rendering the actor
+
+Your index.js file should look like this now:
+
+```js
+import { html, render } from "lit-html";
+import { Actor, ActorSystem } from "tarant";
+import "./styles.css";
+
+class ChatWindow extends Actor {
+  constructor() {
+    super()
+
+    this.messages = []
+  }
+
+  receive({ sender, content }) {
+    this.messages.push({ sender, content });
+  }
+}
+
+const system = ActorSystem.default();
+const firstChat = system.actorOf(ChatWindow, []);
+firstChat.receive({ sender: 'me :D', content: 'Some random message' })
+```
+
+The issue is that, right now, we can't see the messages of our actor! Let's do a first, ugly step, to render them. We will beautify them a bit later.
+
+If you open the `index.html` file you will see with have two divs, with two ids:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tarant Chat</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <div id="window-1"></div> <!-- We will render our actor here! -->
+    <div id="window-2"></div>
+  </body>
+  <script src="src/index.js"></script>
+</html>
+```
+
+We will render our actor inside the `window-1` div. To do so, we need to tell our actor where to render. The simplest way is by passing a parameter to the
+actor constructor.
+
+```js
+class ChatWindow extends Actor {
+  constructor(chatWindow) { // <-- chatWindow here is the first element of the array
+    super()
+
+    this.root = document.getElementById(chatWindow);
+    this.messages = []
+  }
+
+  receive({ sender, content }) {
+    this.messages.push({ sender, content });
+  }
+}
+
+const firstChat = system.actorOf(ChatWindow, [ 'window-1' ]); // 'window-1' is chatWindow in the constructor
+```
+
+With this small change, now we have a reference to the DOM element where the actor is going to render. However, this is not enough, now we want to render it.
+This means, that we need to tell the actor how it's state is going to become HTML. To do so, we will create a new method `render`, that will get the actor
+state and render it into the root DOM element.
+
+```js
+class ChatWindow extends Actor {
+  constructor(chatWindow) { // <-- chatWindow here is the first element of the array
+    super()
+
+    this.root = document.getElementById(chatWindow);
+    this.messages = []
+  }
+
+  receive({ sender, content }) {
+    this.messages.push({ sender, content });
+  }
+
+  render() {
+    render(html`<pre>${JSON.stringify(this.messages, null, 2)}</pre>`, this.root)
+  }
+}
+```
+
+Now we are going to render some ugly JSON with the state of the actor. However, with these changes, nothing is yet rendered in the browser. This is
+because tarant is not a frontend framework: even if we have some integrations like with [Vue](docs/Modules/tarant-vue) that can take care of the
+complexities of rendering, now we are not using any of them.
+
+To start rendering, we will need to tell the actor to render every time we receive a message:
+
+```js
+class ChatWindow extends Actor {
+  constructor(chatWindow) { // <-- chatWindow here is the first element of the array
+    super()
+
+    this.root = document.getElementById(chatWindow);
+    this.messages = []
+  }
+
+  receive({ sender, content }) {
+    this.messages.push({ sender, content });
+    this.render()
+  }
+
+  render() {
+    render(html`<pre>${JSON.stringify(this.messages, null, 2)}</pre>`, this.root)
+  }
+}
+```
+
+Your application now will look like:
+
+![Your application now](./images/1-example-app/3-first-step.png)
