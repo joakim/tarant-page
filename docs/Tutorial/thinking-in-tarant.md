@@ -43,33 +43,12 @@ the code pretty difficult.
 But wait, we are in JavaScript. **JavaScript is single-threaded**, we can not have race conditions! That is *mostly* true, however, with async code things get
 complex really quickly. Consider the following code in JavaScript:
 
-```js
-const simulateWork = async (forHowMuchTime) => await new Promise((resolve, _reject) => setTimeout(resolve, forHowMuchTime))
-const randomTime = (from, to) => Math.floor(Math.random() * (to - from) + from)
-
-class Counter {
-    constructor() {
-        this.number = 1
-    }
-
-    async addOne() {
-        await simulateWork(randomTime(1000, 1500))
-        this.number += 1
-    }
-
-    async multiplyByTwo() {
-        await simulateWork(randomTime(800, 2000))
-        this.number *= 2
-    }
-}
-
-const counter = new Counter()
-
-counter.addOne()
-counter.multiplyByTwo()
-counter.addOne()
-counter.multiplyByTwo()
-```
+<iframe src="https://codesandbox.io/embed/race-condition-js-2veo5l?fontsize=14&hidenavigation=1&theme=dark"
+     style={{ width: "100%", height: "500px", border: "0", borderRadius: "4px", overflow: "hidden"}}
+     title="race-condition-js"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 What is the result of counter at the end of the application? The answer is *it depends*. 
 
@@ -89,39 +68,13 @@ that require multiple calls to multiple backends.
 However, for consistency, what would be the correct state? Actors ensure that any operations, independently of how much time they take, they are executed in order. An
 actor **would ensure that the result is always 10** by design. This is the same code within an actor:
 
-```js
-const { Actor, ActorSystem } = require('tarant')
-
-const simulateWork = async (forHowMuchTime) => await new Promise((resolve, _reject) => setTimeout(resolve, forHowMuchTime))
-const randomTime = (from, to) => Math.floor(Math.random() * (to - from) + from)
-
-class Counter extends Actor {
-    constructor() {
-        super()
-
-        this.number = 1
-    }
-
-    async addOne() {
-        await simulateWork(randomTime(1000, 1500))
-        this.number += 1
-    }
-
-    async multiplyByTwo() {
-        await simulateWork(randomTime(800, 2000))
-        this.number *= 2
-    }
-}
-
-const system = ActorSystem.default()
-const counter = system.actorOf(Counter, [])
-
-counter.addOne()
-counter.multiplyByTwo()
-counter.addOne()
-counter.multiplyByTwo()
-```
-
+<iframe src="https://codesandbox.io/embed/tarant-no-race-condition-rhu4bs?fontsize=14&hidenavigation=1&theme=dark"
+     style={{ width: "100%", height: "500px", border: "0", borderRadius: "4px", overflow: "hidden"}}
+     title="tarant-no-race-condition"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+   
 As you can see, an actor contains both the data and the behaviour like an ordinary class. And the code itself, is really similar. There are only two changes in the 
 code that are important:
 
