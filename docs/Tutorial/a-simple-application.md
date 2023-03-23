@@ -14,7 +14,7 @@ will be sent to the other chat window:
 
 ## Before we start
 
-This tutorial assumes that you already know the basics of tarant. You can read the basics in [Thinking in Tarant](./thinking-in-tarant).
+This tutorial assumes that you already know the basic theory of tarant and the actor model. You can read the basics in [Thinking in Tarant](./thinking-in-tarant).
 
 ## What are you building
 
@@ -72,3 +72,40 @@ Fork CodeSandbox
   ```
 
 </div>
+
+## The Development Environment
+
+When you clicked on the Fork button, it opened a new tab with a CodeSandbox environment. It has everything you need to start coding. You'll see something similar to this:
+
+![How components interact](./images/1-example-app/2-dev-env.png)
+
+1. This is the folder structure of the project. All files will be stored there. For example, `index.html` is the root page of the project. `index.js` is where your JavaScript code will be living. You will be working in the JavaScript file.
+2. This is the current open file. You will be able to modify the code here.
+3. This is the preview. Every time you change the JavaScript file, your changes will be shown here,
+
+Now, open the `index.js` file by clicking on it. If it's not visible in the panel, click on the `src` folder to open it, and you'll be able to see the `index.js` file.
+Essentially, this is your application! Let's go line by line on the code:
+
+```js
+import { html, render } from "lit-html"; // (1)
+import { Actor, ActorSystem } from "tarant"; // (2)
+import "./styles.css"; // (3)
+
+const system = ActorSystem.default(); // (4)
+```
+
+1. This is what we call an `import` statement. It allows you to import a dependency. Here, we are importing the `lit-html` library, that will
+allows us to render our components.
+2. This is another `import` statement, but this time we are importing `tarant`'s Actor and ActorSystem classes.
+3. This is another `import` statement, that allows `Parcel` to import the CSS styles into the final bundle.
+4. This line creates an ActorSystem with the default configuration.
+
+An ActorSystem is where all our actors are going to live. Actors are tied to the actor system, and allows us to interact easily with them. Right now,
+our actor system does not contain any actor, but we will fix that later.
+
+## The ChatWindow Actor
+
+Now we are going to create our first actor. If you remember the diagram we did before, the actor is going to represent the chat window, that contains
+both the chat box (where all our messages are going to be rendered), the input box and the button that we will use to send messages to the next chat window.
+
+![This is the diagram](./images/1-example-app/1-component-interaction.png)
