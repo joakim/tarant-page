@@ -525,6 +525,18 @@ constructor(chatWindow, receiverName) {
 ensuring that peers of the actor can not access internal state and break the consistency. However, the `Proxy` looks like the actor, so it shares
 the same interface as the underlying actor.
 
+<div class="alert alert--primary" style={{"margin-top": "1em", "margin-bottom": "1em", "padding-bottom": "4px"}} role="alert">
+
+
+**Quiz!**
+
+There is another change we need to do, related to how we construct an actor, in our code. We added a new parameter to the constructor,
+so how do we pass the new argument to that constructor?
+
+The code in the sample has this change fixed, but you can try to fix it yourself and check the answer when done.
+
+</div>
+
 Your code should look like this now:
 
 ```js
@@ -574,13 +586,35 @@ class ChatWindow extends Actor {
 }
 
 const system = ActorSystem.default();
-const firstChat = system.actorOf(ChatWindow, ["window-1"]);
+const firstChat = system.actorOf(ChatWindow, ["window-1", "window-2"]); // <-- this is the answer to the quiz. We add the name of the other chat window!
 firstChat.receive({ sender: "me :D", content: "Some random message" });
-const secondChat = system.actorOf(ChatWindow, ["window-2"]);
+const secondChat = system.actorOf(ChatWindow, ["window-2", "window-1"]); // <-- this is the answer to the quiz. We add the name of the other chat window!
 secondChat.receive({
   sender: "another me :D",
   content: "Some random message to chat 2"
 });
 ```
 
-### 
+### 3. Send the message to the chat window.
+
+Now that we have a reference to the other chat window, adding a new message is straightforward. We already did a few times! One thing to consider is that
+actors are interaction-based (or message-based). When an actor interacts with another, it usually uses a mirrored language. For example:
+
+![Exposed Language](./images/1-example-app/6-exposed-language.png)
+
+In this case, an actor that wants to communicate uses the `exposed language` of the receiver actor. In Domain Driven Design, the `exposed language` is called **published language** and it's an important pattern to ensure encapsulation.
+
+<div class="alert alert--primary" style={{"margin-top": "1em", "margin-bottom": "1em", "padding-bottom": "4px"}} role="alert">
+
+In our example, the exposed language for the actor is the `receive` method. So, when we want to send a message from a chat window to another, we
+tell the target chat window to receive the new message.
+
+</div>
+
+So we will change the `send` method to reflect the change:
+
+```js
+otherChatWindow.receive({ sender: this.name, content: message });
+```
+
+Easy, right? Now the method will look like:
