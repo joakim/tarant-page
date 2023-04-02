@@ -737,6 +737,90 @@ secondChat.render()
 
 ### 4. Render my own message.
 
-Now the application is able to send new messages to the other chat window, and then get rendered into the screen.
+Now the application is able to send new messages to the other chat window, and then get rendered into the screen. This is how the
+application looks like:
 
 ![How the App Looks Like](./images/1-example-app/7-how-the-app-looks-like.gif)
+
+However, in every chat application, you can see also your own messages. Let's implement that feature now that we have the `send` method
+ready.
+
+In our current implementation, every time that an actor receives a message it renders the `messages` array it contains. There are two possible
+solutions then:
+
+* We can call our own `receive` method with the message.
+* We add our already generated message into the `messages` array and render.
+
+They have different implications.
+
+#### Calling our own `receive`.
+
+That would be the first option as it adds the message to the array and renders. In tarant, actors are `reentrant` which means that they can send themselves
+messages which are also transactional. However, these messages run in another transaction, so we might send messages to other actors but don't refresh our
+own chat window.
+
+#### Adding the message to `messages` and render.
+
+As it's part of the same method, and we are not sending additional messages (only for render, which doesn't mutate the state) this ensures that once the message
+is received by the second Chat Window, the message is instantly added to our message list.
+
+For the purpose of the tutorial, we will be adding the message directly, as it seems to be the most correct implementation.
+
+The implementation of `send` now will look like:
+
+```js
+  async send() {
+    const element = this.root.querySelector("input");
+    const message = element.value;
+    const otherChatWindow = await this.system.actorFor(this.receiver);
+
+    this.messages.push({ content: message });
+    otherChatWindow.receive({ sender: this.name, content: message });
+
+    this.render();
+  }
+```
+
+Now the application will show all messages, both that you sent and the ones that you received. Now we can tidy up a little bit the HTML to render
+the messages a little more friendlier.
+
+Change the render method to this:
+
+```js
+render() {
+  render(
+    html`
+      <div class="chat-window">
+        <h2>Chat Window from ${this.name}</h2>
+        <div class="message-list">
+          ${this.messages.map(
+            (message) =>
+              html`
+                <div class="${message.sender ? "received" : "sent"}">
+                  <p>${message.sender || "Me"}: ${message.content}</p>
+                </div>
+              `
+          )}
+        </div>
+        <div class="input-box">
+          <input type="text" name="text" />
+          <button @click="${() => this.send()}">Send</button>
+        </div>
+      </div>
+    `,
+    this.root,
+    { host: this }
+  );
+```
+
+**Congratulations! You've just implemented your first application in tarant!** The whole application code will now look like the one we saw 
+during the beginning of the tutorial:
+
+<iframe src="https://codesandbox.io/embed/tarant-chat-complete-example-vdwk96?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+     style={{ width: "100%", height: "500px", border: "0", borderRadius: "4px", overflow: "hidden"}}
+     title="lucid-pateu-vdwk96"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+
