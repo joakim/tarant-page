@@ -617,4 +617,126 @@ So we will change the `send` method to reflect the change:
 otherChatWindow.receive({ sender: this.name, content: message });
 ```
 
-Easy, right? Now the method will look like:
+Easy, right? Now the whole code will look like:
+
+```js
+import { html, render } from "lit-html";
+import { Actor, ActorSystem } from "tarant";
+import "./styles.css";
+
+class ChatWindow extends Actor {
+  constructor(chatWindow, receiverName) {
+    super(chatWindow); // this specifies the ID of the actor, we will need it later
+
+    this.root = document.getElementById(chatWindow);
+    this.name = chatWindow;
+    this.receiver = receiverName;
+    this.messages = [];
+  }
+
+  receive({ sender, content }) {
+    this.messages.push({ sender, content });
+    this.render();
+  }
+
+  async send() { // because we are going to interact with the external world, let's mark the method as async
+    const element = this.root.querySelector("input");
+    const message = element.value;
+
+    const otherChatWindow = await this.system.actorFor(this.receiver);
+    otherChatWindow.receive({ sender: this.name, content: message });
+  }
+
+
+  render() {
+    render(
+      html`
+        <div class="chat-window">
+          <h2>Chat Window from ${this.name}</h2>
+          <div class="message-list">
+            ${JSON.stringify(this.messages, null, 2)}
+          </div>
+          <div class="input-box">
+            <input type="text" name="text" />
+            <button @click=${() => this.send()}>Send</button>
+          </div>
+        </div>
+      `,
+      this.root
+    );
+  }
+}
+
+const system = ActorSystem.default();
+const firstChat = system.actorOf(ChatWindow, ["window-1", "window-2"]);
+firstChat.receive({ sender: "me :D", content: "Some random message" });
+const secondChat = system.actorOf(ChatWindow, ["window-2", "window-1"]);
+secondChat.receive({
+  sender: "another me :D",
+  content: "Some random message to chat 2"
+});
+```
+
+For the next step in the tutorial, we can remove the initial messages, and keep the chat window empty unless we interact with it.
+
+```js
+import { html, render } from "lit-html";
+import { Actor, ActorSystem } from "tarant";
+import "./styles.css";
+
+class ChatWindow extends Actor {
+  constructor(chatWindow, receiverName) {
+    super(chatWindow); // this specifies the ID of the actor, we will need it later
+
+    this.root = document.getElementById(chatWindow);
+    this.name = chatWindow;
+    this.receiver = receiverName;
+    this.messages = [];
+  }
+
+  receive({ sender, content }) {
+    this.messages.push({ sender, content });
+    this.render();
+  }
+
+  async send() { // because we are going to interact with the external world, let's mark the method as async
+    const element = this.root.querySelector("input");
+    const message = element.value;
+
+    const otherChatWindow = await this.system.actorFor(this.receiver);
+    otherChatWindow.receive({ sender: this.name, content: message });
+  }
+
+
+  render() {
+    render(
+      html`
+        <div class="chat-window">
+          <h2>Chat Window from ${this.name}</h2>
+          <div class="message-list">
+            ${JSON.stringify(this.messages, null, 2)}
+          </div>
+          <div class="input-box">
+            <input type="text" name="text" />
+            <button @click=${() => this.send()}>Send</button>
+          </div>
+        </div>
+      `,
+      this.root
+    );
+  }
+}
+
+const system = ActorSystem.default();
+const firstChat = system.actorOf(ChatWindow, ["window-1", "window-2"]);
+const secondChat = system.actorOf(ChatWindow, ["window-2", "window-1"]);
+
+firstChat.render()
+secondChat.render()
+```
+
+### 4. Render my own message.
+
+Now the application is able to send new messages to the other chat window, and then get rendered into the screen.
+
+![How the App Looks Like](./images/1-example-app/7-how-the-app-looks-like.gif)
