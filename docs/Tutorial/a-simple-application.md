@@ -99,7 +99,7 @@ const system = ActorSystem.default(); // (4)
 1. This is what we call an `import` statement. It allows you to import a dependency. Here, we are importing the `lit-html` library, that will
 allows us to render our components.
 2. This is another `import` statement, but this time we are importing `tarant`'s Actor and ActorSystem classes.
-3. This is another `import` statement, that allows `Parcel` to import the CSS styles into the final bundle.
+3. This is another `import` statement, that includes CSS styles into the final bundle.
 4. This line creates an ActorSystem with the default configuration.
 
 An ActorSystem is where all our actors are going to live. Actors are tied to the actor system, and allows us to interact easily with them. Right now,
@@ -250,7 +250,7 @@ const firstChat = system.actorOf(ChatWindow, [ 'window-1' ]); // 'window-1' is t
 ```
 
 With this small change, now we have a reference to the DOM element where the actor is going to render. However, this is not enough, now we want to render it.
-This means, that we need to tell the actor how it's state is going to become HTML. To do so, we will create a new method `render`, that will get the actor
+This means, that we need to tell the actor how its state is going to become HTML. To do so, we will create a new method `render`, that will get the actor
 state and render it into the root DOM element.
 
 ```js
