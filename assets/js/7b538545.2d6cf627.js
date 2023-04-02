@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktarant_page=self.webpackChunktarant_page||[]).push([[3309],{33:e=>{e.exports=JSON.parse('{"title":"Modules","slug":"/category/modules","permalink":"/docs/category/modules","navigation":{"previous":{"title":"Mailboxes","permalink":"/docs/Components/mailboxes"},"next":{"title":"Tarant","permalink":"/docs/Modules/tarant"}}}')}}]);
