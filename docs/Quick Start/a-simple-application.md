@@ -824,3 +824,7 @@ during the beginning of the tutorial:
 ></iframe>
 
 
+## What's Next
+
+This tutorial walked you through how to create a simple frontend application with tarant and lit-html. However, you can use tarant also in the backend,
+so you might want to see [how to create a simple web server](./a-simple-server) or to check a [list of modules available](/docs/category/modules) for tarant.
