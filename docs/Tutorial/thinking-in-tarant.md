@@ -60,7 +60,7 @@ I ran the code a few times, sometimes the number was 12, 8, sometimes 10, and so
   * addOne, multiplyByTwo, addOne, multiplyByTwo => 10
 
 Even if we schedule the functions in order, because we are doing asynchronous code, the order of execution is not guaranteed!
-So even in a single-threaded world, we can have race conditions! This is one of the most complex in lots of web applications
+So even in a single-threaded world, we can have race conditions! This is one of the most complex problems in lots of web applications
 that require multiple calls to multiple backends.
 
 ![A race condition just happened](images/0-designing-a-tarant-application/1-race-conditions.png)

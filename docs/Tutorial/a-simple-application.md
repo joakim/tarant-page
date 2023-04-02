@@ -27,6 +27,8 @@ In this tutorial you will be building an interactive chat that runs on the same 
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
+Feel free to interact with the application and understand how it behaves as this tutorial will guide you on how to build it.
+
 ## The Architecture
 
 In tarant, it is common to map components to actors. Each component, at the end, has it's own lifecycle, state and behaviour, and you want it to be isolated and
@@ -73,7 +75,7 @@ Fork CodeSandbox
 
 </div>
 
-## The Development Environment
+### The Development Environment
 
 When you clicked on the Fork button, it opened a new tab with a CodeSandbox environment. It has everything you need to start coding. You'll see something similar to this:
 
@@ -244,7 +246,7 @@ class ChatWindow extends Actor {
   }
 }
 
-const firstChat = system.actorOf(ChatWindow, [ 'window-1' ]); // 'window-1' is chatWindow in the constructor
+const firstChat = system.actorOf(ChatWindow, [ 'window-1' ]); // 'window-1' is the chatWindow parameter in the constructor
 ```
 
 With this small change, now we have a reference to the DOM element where the actor is going to render. However, this is not enough, now we want to render it.
@@ -278,7 +280,7 @@ To start rendering, we will need to tell the actor to render every time we recei
 
 ```js
 class ChatWindow extends Actor {
-  constructor(chatWindow) { // <-- chatWindow here is the first element of the array
+  constructor(chatWindow) {
     super()
 
     this.root = document.getElementById(chatWindow);
@@ -299,3 +301,286 @@ class ChatWindow extends Actor {
 Your application now will look like:
 
 ![Your application now](./images/1-example-app/3-first-step.png)
+
+But we have two chats, so we need to render two actors. To render an additional actor, we will use the same strategy as we've done with the first actor.
+
+```js
+const secondChat = system.actorOf(ChatWindow, [ 'window-2' ]);
+secondChat.receive({ sender: 'another me :D', content: 'Some random message to chat 2' })
+```
+
+Now you'll see both messages, side by side:
+
+![Now two chats](./images/1-example-app/4-chats-side-by-side.png)
+
+## Adding interaction: sending messages
+
+However, few applications are useful if you can not interact with them. Now we are going to implement the functionality of sending messages
+between chats. Let's recall how the application is going to look like:
+
+![How components interact](./images/1-example-app/1-component-interaction.png)
+
+Each ChatWindow will have a text input and a button, and once we click the button, the message is sent to the other ChatWindow. That will also show
+exactly how actors interact between them.
+
+To start with something, let's create the new input and button. Let's change the `render` method to add the new components:
+
+```js
+render() {
+  render(
+    html`
+      <div class="chat-window">
+        <h2>Chat Window from ${this.name}</h2>
+        <div class="message-list">
+          ${JSON.stringify(this.messages, null, 2)}
+        </div>
+        <div class="input-box">
+          <input type="text" name="text" />
+          <button>Send</button>
+        </div>
+      </div>
+    `,
+    this.root
+  );
+}
+```
+
+In the previous code we are beautifying a bit the HTML and wrapper the messages in a div called `message-list`. We are also
+creating the `input-box` that contains both the `input type="text"` and the button we would like to click to send a message.
+
+The application now will look like this:
+
+![Two chat windows, less uglier](./images/1-example-app/5-interaction-0.png)
+
+Now we need to add interaction to our components. But, how do we connect an onclick of a button with an actor message? With
+lit-html is straightforward, as it allows us to declaratively define our event handlers on any element:
+
+```js
+<button @click=${() => this.send()}>Send</button>
+```
+
+Now let's create the send method. I won't do anything, yet, but will act as a placeholder for the business logic.
+
+```js
+send() {
+
+}
+```
+
+Your complete actor will look like:
+
+
+```js
+class ChatWindow extends Actor {
+  constructor(chatWindow) {
+    super();
+
+    this.root = document.getElementById(chatWindow);
+    this.messages = [];
+  }
+
+  receive({ sender, content }) {
+    this.messages.push({ sender, content });
+    this.render();
+  }
+
+  send() {
+
+  }
+
+  render() {
+    render(
+      html`
+        <div class="chat-window">
+          <h2>Chat Window from ${this.name}</h2>
+          <div class="message-list">
+            ${JSON.stringify(this.messages, null, 2)}
+          </div>
+          <div class="input-box">
+            <input type="text" name="text" />
+            <button @click=${() => this.send()}>Send</button>
+          </div>
+        </div>
+      `,
+      this.root
+    );
+  }
+}
+```
+
+Now we need to step back for a second and think on what the actor needs to do to fulfill it's request. What we want to achieve is that the
+other chat window receives the message so it can be rendered. Also, we want to render our own message, like a chat application. So, what
+are the steps?
+
+1. Get the value from my own input.
+2. Get a reference to the other chat window.
+3. Send the message to the chat window.
+4. Render my own message.
+
+Let's go step by step.
+
+### 1. Get the value from my own input.
+
+`lit-html` does not use a VDOM, so we can access the rendered input by just using querySelector:
+
+```js
+const element = this.root.querySelector("input");
+const message = element.value
+```
+
+The code, before the next step, will look like:
+
+```js
+import { html, render } from "lit-html";
+import { Actor, ActorSystem } from "tarant";
+import "./styles.css";
+
+class ChatWindow extends Actor {
+  constructor(chatWindow) {
+    super();
+
+    this.root = document.getElementById(chatWindow);
+    this.messages = [];
+  }
+
+  receive({ sender, content }) {
+    this.messages.push({ sender, content });
+    this.render();
+  }
+
+  send() {
+    const element = this.root.querySelector("input");
+    const message = element.value
+  }
+
+  render() {
+    render(
+      html`
+        <div class="chat-window">
+          <h2>Chat Window from ${this.name}</h2>
+          <div class="message-list">
+            ${JSON.stringify(this.messages, null, 2)}
+          </div>
+          <div class="input-box">
+            <input type="text" name="text" />
+            <button @click=${() => this.send()}>Send</button>
+          </div>
+        </div>
+      `,
+      this.root
+    );
+  }
+}
+
+const system = ActorSystem.default();
+const firstChat = system.actorOf(ChatWindow, ["window-1"]);
+firstChat.receive({ sender: "me :D", content: "Some random message" });
+const secondChat = system.actorOf(ChatWindow, ["window-2"]);
+secondChat.receive({
+  sender: "another me :D",
+  content: "Some random message to chat 2"
+});
+```
+
+### 2. Get a reference to the other chat window.
+
+To get a reference to the other chat window, we will need first the name of the chat window. The easiest way is just by passing it as a
+parameter in the constructor of the actor. We will be also storing our own name so we can use send it to the receiver of our messages.
+
+```js
+constructor(chatWindow, receiverName) {
+  super(chatWindow); // this specifies the ID of the actor, we will need it later
+
+  this.root = document.getElementById(chatWindow);
+  this.name = chatWindow;
+  this.receiver = receiverName;
+  this.messages = [];
+}
+```
+
+Now we need to change the send method, so it gets a reference to the other chat window, using the actor system. All actors contain a reference
+to the actor system they belong, so finding another actor is relatively easy:
+
+```js
+  async send() { // because we are going to interact with the external world, let's mark the method as async
+    const element = this.root.querySelector("input");
+    const message = element.value;
+
+    const otherChatWindow = await this.system.actorFor(this.receiver);
+  }
+```
+
+`actorFor` is a method, inside the ActorSystem, that resolves an actor by it's unique identifier. Every actor can specify it's
+unique identifier during it's construction time by calling the parent constructor with the id they want. We did earlier, and it
+looks like:
+
+```js
+constructor(chatWindow, receiverName) {
+  super(chatWindow); // this specifies the ID of the actor
+  // ...
+}
+```
+
+`actorFor` does not return an actor, but a `Proxy` to an actor. The state of the actor is isolated inside the proxy, so it's not accessible,
+ensuring that peers of the actor can not access internal state and break the consistency. However, the `Proxy` looks like the actor, so it shares
+the same interface as the underlying actor.
+
+Your code should look like this now:
+
+```js
+import { html, render } from "lit-html";
+import { Actor, ActorSystem } from "tarant";
+import "./styles.css";
+
+class ChatWindow extends Actor {
+  constructor(chatWindow, receiverName) {
+    super(chatWindow); // this specifies the ID of the actor, we will need it later
+
+    this.root = document.getElementById(chatWindow);
+    this.name = chatWindow;
+    this.receiver = receiverName;
+    this.messages = [];
+  }
+
+  receive({ sender, content }) {
+    this.messages.push({ sender, content });
+    this.render();
+  }
+  
+  async send() { // because we are going to interact with the external world, let's mark the method as async
+    const element = this.root.querySelector("input");
+    const message = element.value;
+
+    const otherChatWindow = await this.system.actorFor(this.receiver);
+  }
+
+  render() {
+    render(
+      html`
+        <div class="chat-window">
+          <h2>Chat Window from ${this.name}</h2>
+          <div class="message-list">
+            ${JSON.stringify(this.messages, null, 2)}
+          </div>
+          <div class="input-box">
+            <input type="text" name="text" />
+            <button @click=${() => this.send()}>Send</button>
+          </div>
+        </div>
+      `,
+      this.root
+    );
+  }
+}
+
+const system = ActorSystem.default();
+const firstChat = system.actorOf(ChatWindow, ["window-1"]);
+firstChat.receive({ sender: "me :D", content: "Some random message" });
+const secondChat = system.actorOf(ChatWindow, ["window-2"]);
+secondChat.receive({
+  sender: "another me :D",
+  content: "Some random message to chat 2"
+});
+```
+
+### 
