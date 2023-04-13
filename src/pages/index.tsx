@@ -14,7 +14,7 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-
+        <video controls src='video/intro.webm' width="700" height="400" />
         <div className={styles.buttons}>
           <Link 
             className={`button button--secondary button--lg ${styles.heroButton}`}
@@ -27,7 +27,6 @@ function HomepageHeader() {
             Gitter
           </Link>
         </div>
-        <HomepageTryIt />
       </div>
     </header>
   );
@@ -42,6 +41,7 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <HomepageTryIt />
       </main>
     </Layout>
   );
