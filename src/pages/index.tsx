@@ -22,10 +22,19 @@ function HomepageHeader() {
             Get Started
           </Link>
           <Link 
-            className={`button button--secondary button--outline button--lg ${styles.heroButton}`}
+            className={`button button--secondary button--lg ${styles.heroButton}`}
             to="https://app.gitter.im/#/room/#tarantx_general">
-            Gitter
+            Join The Conversation
           </Link>
+          <button 
+            className={`button button--secondary button--lg ${styles.heroButton}`}
+            onClick={() => {
+              console.log("hello",document.getElementById('formbutton-button'))
+              document.getElementById('formbutton-button').click()
+            }}>
+            Join The Cloud Beta
+          </button>
+
         </div>
       </div>
     </header>
