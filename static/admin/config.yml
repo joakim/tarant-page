@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: kanekotic/kanekotic-page
+  repo: tarantx/tarant-page
   branch: main
   base_url: https://bevel-ahead-bagel.glitch.me
 media_folder: "static/img"
