@@ -4,7 +4,7 @@ backend:
   branch: main
   base_url: https://bevel-ahead-bagel.glitch.me
 media_folder: "static/img"
-public_folder: "https://raw.githubusercontent.com/kanekotic/kanekotic-page/main/static/img/"
+public_folder: "https://raw.githubusercontent.com/tarantx/tarant-page/main/static/img/"
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
@@ -135,7 +135,7 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Domain", name: "domain", widget: "hidden", default: "kanekotic.hashnode.dev"}
+      - {label: "Domain", name: "domain", widget: "hidden", default: "tarant.hashnode.dev"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Subtitle", name: "subtitle", widget: "string"}
       - label: "Tags"
