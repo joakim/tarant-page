@@ -27,10 +27,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-            - name: Sycing Article to dev.to
-      - uses: kanekotic/TheActionDev@main
+      - name: Sycing Article to dev.to
+        uses: kanekotic/TheActionDev@main
         with:
           api-key: ${{ secrets.DEVTO_TOKEN }}
           directory: ./blog
-          ignore: 201**.md
 
