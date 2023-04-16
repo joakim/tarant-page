@@ -8,19 +8,17 @@
     <subtitle>Tarant Blog</subtitle>
     <icon>https://www.tarant.dev/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[Continious Delivery Bootcamp: Test Driven Development]]></title>
+        <title type="html"><![CDATA[Website Revamp]]></title>
         <id>https://www.tarant.dev/blog/2023/03/12/website-revamp</id>
         <link href="https://www.tarant.dev/blog/2023/03/12/website-revamp"/>
         <updated>2023-03-12T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Learn how to get things fast into production with good quality]]></summary>
+        <summary type="html"><![CDATA[we have a new version of our website and documentation]]></summary>
         <content type="html"><![CDATA[<p>Hello welcome everyone to the first blog post of the revamped website.</p>]]></content>
         <author>
             <name>kanekotic</name>
             <uri>https://github.com/kanekotic</uri>
         </author>
-        <category label="programming" term="programming"/>
-        <category label="productivity" term="productivity"/>
-        <category label="devops" term="devops"/>
-        <category label="development" term="development"/>
+        <category label="website" term="website"/>
+        <category label="product" term="product"/>
     </entry>
 </feed>
