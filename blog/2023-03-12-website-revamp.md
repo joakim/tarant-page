@@ -1,12 +1,10 @@
 ---
 authors: kanekotic
-title: "Continious Delivery Bootcamp: Test Driven Development"
+title: "Website Revamp"
 tags:
-  - programming
-  - productivity
-  - devops
-  - development
-description: Learn how to get things fast into production with good quality
+  - website
+  - product
+description: we have a new version of our website and documentation
 draft: false
 published: 2023-04-18T07:30:00.000Z
 organization_id: 6881
