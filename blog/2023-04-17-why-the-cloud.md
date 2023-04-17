@@ -5,12 +5,12 @@ tags:
   - cloud
   - product
 description: An approach for a common abstraction level 
-draft: true
+draft: false
 published: 2023-04-17T09:00:00.000Z
 organization_id: 6881
 ---
 
-_An approach for a common abstraction level_.
+![An approach for a common abstraction level](/img/why-tarant-post-title.png)
 
 ## The current scenario
 
@@ -100,7 +100,7 @@ We are sure that using the actor model, and specific conventions and best practi
 assume optimisations, simplify the development model and improve how monitoring and observability works. To this, to work, means that we are not developing
 anything generic, but will built on top of tarant and for tarant.
 
-Our principes are:
+Our principles are:
 
 * No additional concepts: all features are tarant based and using already know tarant concepts.
   * Only think about actors, topics, messages and systems.
