@@ -32,8 +32,8 @@ problems, like sociotechnical challenges, resource management, financial operati
 
 For this post, we are going to talk about production complexity and billing.
 
-Both [@kanekotic](https://github.com/kanekotic) and [myself](https://github.com/kmruiz) are software developers: we've are, and been leading teams of 
-different sizes and diversities, with different problems, build software.  We are still doing this from different aspects of the delivery timeline of a project. 
+Both [@kanekotic](https://github.com/kanekotic) and [myself](https://github.com/kmruiz) are software developers, leading teams of different sizes and diversities,
+with different problems, building software.  We are still doing this from different aspects of the delivery timeline of a project. 
 This allows us to understand the software industry from a wider level and to understand where and how we are struggling.
 
 Digging on the feedback we've gathered, we've found the following list of challenges that are common and hardly resolved:
@@ -102,7 +102,7 @@ anything generic, but will built on top of tarant and for tarant.
 
 Our principles are:
 
-* No additional concepts: all features are tarant based and using already know tarant concepts.
+* No additional concepts: all features are tarant based and using already known tarant concepts.
   * Only think about actors, topics, messages and systems.
 * Secure by default
   * Secure options **must** be easier, or as easy as insecure ones.
