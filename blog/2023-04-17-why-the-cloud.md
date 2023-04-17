@@ -1,6 +1,6 @@
 ---
 authors: kmruiz
-title: "Tarant Cloud: Talk, Communicate and Solve"
+title: "Tarant Cloud: Talk, Collaborate and Solve"
 tags:
   - cloud
   - product
