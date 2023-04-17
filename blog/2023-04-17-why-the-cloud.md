@@ -14,9 +14,10 @@ organization_id: 6881
 
 ## The current scenario
 
-Working on software based solution is a complex task that requires a cohort of very different roles that interact together to design, build, test, deploy and monitor
-the product. Complexity grows with requirements, given more features, less reliable is to build on top of that software and becomes problematic. The community
-worked on different solutions for all the set of problems that we, as software developers, need to solve to put our software, working, in production.
+Working on software based solutions is a complex task that requires the effort of a cohort of very different roles that interact together to design, build, 
+test, deploy and monitor the product. Complexity grows with requirements, given more features, less reliable is to build on top of that software and 
+becomes problematic. The community worked on different solutions for all the set of problems that we, as software developers, need to solve to put our 
+software, working, in production.
 
 These solutions span lots of different aspects of the essential complexity of our work:
 
