@@ -4,8 +4,6 @@ sidebar_position: 7
 
 # Tarant React
 
-## Motivation
-
 Provide the capabilities to actors to be render using the react framework.
 
 ## Installation

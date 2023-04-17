@@ -4,8 +4,6 @@ sidebar_position: 6
 
 # Tarant Sync Router Express
 
-## Motivation
-
 remote-sync server for bindings clients using routers or `tarant-sync-router-express`
 
 

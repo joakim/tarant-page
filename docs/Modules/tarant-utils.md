@@ -4,8 +4,6 @@ sidebar_position: 2
 
 # Tarant Utils
 
-## Motivation
-
 Provide a set of utils that help apply some of the paterns that tarant uses.
 
 ## Installation
