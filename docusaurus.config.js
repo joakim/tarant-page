@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Tarant',
-  tagline: 'The Typescript/JavaScript library for building software with the Actor Model',
+  tagline: 'The Universal Actor Model',
   url: 'https://www.tarant.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
