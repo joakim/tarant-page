@@ -12,8 +12,8 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title"><img alt={siteConfig.title} src="/img/logo.svg" style={{ height: "1em" }}/><span style={{"textShadow": "2px 2px #000", "marginLeft": "0.2em"}}>{siteConfig.title}</span></h1>
-        <p className="hero__subtitle" style={{"textShadow": "2px 2px #000"}}>{siteConfig.tagline}</p>
+        <h1 className="hero__title"><img alt={siteConfig.title} src="/img/logo.svg" style={{ height: "1em" }}/><span style={{"textShadow": "2px 2px #000", "marginLeft": "0.2em", color: "white"}}>{siteConfig.title}</span></h1>
+        <p className="hero__subtitle" style={{"textShadow": "2px 2px #000", color: "white"}}>{siteConfig.tagline}</p>
         <video controls src='video/intro.mp4' width="700" height="400" />
         <div className={`row ${styles.buttons}`}>
           <Link 
