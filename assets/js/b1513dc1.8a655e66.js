@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktarant_page=self.webpackChunktarant_page||[]).push([[3937],{4370:a=>{a.exports=JSON.parse('{"permalink":"/blog/tags/cloud","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
