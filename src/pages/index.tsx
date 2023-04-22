@@ -15,19 +15,19 @@ function HomepageHeader() {
         <h1 className="hero__title"><img alt={siteConfig.title} src="/img/logo.svg" style={{ height: "1em" }}/><span style={{"textShadow": "2px 2px #000", "marginLeft": "0.2em"}}>{siteConfig.title}</span></h1>
         <p className="hero__subtitle" style={{"textShadow": "2px 2px #000"}}>{siteConfig.tagline}</p>
         <video controls src='video/intro.mp4' width="700" height="400" />
-        <div className={styles.buttons}>
+        <div className={`row ${styles.buttons}`}>
           <Link 
-            className={`button button--secondary button--lg ${styles.heroButton}`}
+            className={`col button button--secondary button--lg ${styles.heroButton}`}
             to="/docs/category/quick-start">
             Get Started
           </Link>
           <Link 
-            className={`button button--secondary button--lg ${styles.heroButton}`}
+            className={`col button button--secondary button--lg ${styles.heroButton}`}
             to="https://app.gitter.im/#/room/#tarantx_general">
             Join The Conversation
           </Link>
           <button 
-            className={`button button--secondary button--lg ${styles.heroButton}`}
+            className={`col button button--secondary button--lg ${styles.heroButton}`}
             onClick={() => {
               console.log("hello",document.getElementById('formbutton-button'))
               document.getElementById('formbutton-button').click()
