@@ -10,7 +10,7 @@ tags:
 description: Intro video about the fullstack actor model
 draft: false
 published: 2023-04-24T18:56:18.830Z
-cover_image: https://raw.githubusercontent.com/tarantx/tarant-page/main/static/img/tarant-intro.png
+cover_image: https://raw.githubusercontent.com/tarantx/tarant-page/main/static/img/tarant-simple-actors.png
 series: Tarant Tuorials
 ---
 ![](https://raw.githubusercontent.com/tarantx/tarant-page/main/static/img/ping-actor.png)
