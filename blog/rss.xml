@@ -9,7 +9,7 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <item>
-            <title><![CDATA[Tarant Fullstack Actor System in 5 minutes]]></title>
+            <title><![CDATA[Implementing a simple actor in Tarant]]></title>
             <link>https://www.tarant.dev/blog/2023/04/24/tarant-fullstack-actor-system-in-5-minutes</link>
             <guid>https://www.tarant.dev/blog/2023/04/24/tarant-fullstack-actor-system-in-5-minutes</guid>
             <pubDate>Mon, 24 Apr 2023 00:00:00 GMT</pubDate>

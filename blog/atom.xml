@@ -8,7 +8,7 @@
     <subtitle>Tarant Blog</subtitle>
     <icon>https://www.tarant.dev/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[Tarant Fullstack Actor System in 5 minutes]]></title>
+        <title type="html"><![CDATA[Implementing a simple actor in Tarant]]></title>
         <id>https://www.tarant.dev/blog/2023/04/24/tarant-fullstack-actor-system-in-5-minutes</id>
         <link href="https://www.tarant.dev/blog/2023/04/24/tarant-fullstack-actor-system-in-5-minutes"/>
         <updated>2023-04-24T00:00:00.000Z</updated>
