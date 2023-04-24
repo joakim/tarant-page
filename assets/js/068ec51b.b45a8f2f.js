@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktarant_page=self.webpackChunktarant_page||[]).push([[6163],{5828:a=>{a.exports=JSON.parse('{"label":"showdev","permalink":"/blog/tags/showdev","allTagsPath":"/blog/tags","count":1}')}}]);
