@@ -11,6 +11,7 @@ description: Intro video about the fullstack actor model
 draft: false
 published: 2023-04-24T18:49:56.858Z
 cover_image: https://raw.githubusercontent.com/tarantx/tarant-page/main/static/img/tarant-intro.png
+series: Tarant Tuorials
 ---
 Are you tired of struggling with complex actor systems that require you to write complex code just to manage simple communication between your application's components?
 
