@@ -1,7 +1,7 @@
 ---
 authors: kanekotic
 organization_id: 6881
-title: Tarant Fullstack Actor System in 5 minutes
+title: Implementing a simple actor in Tarant
 tags:
   - opensource
   - showdev
