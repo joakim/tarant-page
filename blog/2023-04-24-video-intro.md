@@ -1,7 +1,7 @@
 ---
 authors: kanekotic
 organization_id: 6881
-title: Video Intro
+title: Tarant Fullstack Actor System in 5 minutes
 tags:
   - opensource
   - programming
