@@ -142,16 +142,6 @@ const config = {
         indexName: 'tarant-js'
       }
     }),
-    scripts: [
-      {
-        src: 'https://formspree.io/js/formbutton-v1.min.js',
-        defer: true,
-      },
-      {
-        src: `/js/frombutton.js`,
-        defer: true,
-      },
-    ],
 };
 
 module.exports = config;
