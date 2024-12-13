@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Tarant is a framework which has been designed for performance and easiness of development. However, it's based in the actor model, so some known design patterns 
 change and there are alternatives that simplify the development of applications. In this tutorial, we will walkthrough over the design principles when working with
-actors and tarant.
+actors and Tarant.
 
 ## Before we start
 
@@ -21,7 +21,7 @@ If you don't feel comfortable working with classes, we recommend to read the fol
 
 ## What are actors?
 
-First, let's start with the building blocks of tarant. A good understanding of what actors are is important to design an application with all the advantages of
+First, let's start with the building blocks of Tarant. A good understanding of what actors are is important to design an application with all the advantages of
 the actor model.
 
 An actor **is an object**, in the broader sense of the concept. An actor, as objects, contain both data and behaviour. However, what makes an actor different from
@@ -78,10 +78,10 @@ actor **would ensure that the result is always 10** by design. This is the same 
 As you can see, an actor contains both the data and the behaviour like an ordinary class. And the code itself, is really similar. There are only two changes in the 
 code that are important:
 
-* Actors extend the `Actor` class from tarant.
+* Actors extend the `Actor` class from Tarant.
 * Actors must be instantiated through the actor system[^2].
 
-But if they are like classes, how they ensure the correctness of the code? Actors are a little bit more complex than classes internally, but tarant encapsulates
+But if they are like classes, how they ensure the correctness of the code? Actors are a little bit more complex than classes internally, but Tarant encapsulates
 all that.
 
 When you call a method in an actor, you send a message to it's mailbox. A mailbox is the list of operations that has to be done by the actor. The actor will be
@@ -109,27 +109,26 @@ However, the counter object still exists _in theory_. In our business, the _coun
 during our transaction is `a representation of the counter` that lasts until the request is done. So every time we want to modify the counter, we have to create an
 object, mutate it, and store it in the database.
 
-An actor, but, is different. Actor is designed to share the same lifecycle of the business object it represents. The counter lives for an hour? Then the actor also.
-The counter can live for a few years? Then so be it, the actor will also live for the same amount of time.
+An actor, however, is different. Actors are designed to share the same lifecycle as the business object they represent. If the counter lives for an hour, then so does the actor.
+If the counter lives for a few years, then so be it, the actor will have to live for the same amount of time.
 
-The same flow in tarant, would look like:
+The same flow in Tarant, would look like:
 
 ![Object Lifecycle](images/0-designing-a-tarant-application/4-actor-lifecycle.png)
 
-But, the question that you might have now is: what happens when I have billions of counters? An application might get out of memory easily. However, tarant can
-**evict** actors, which means, releasing the memory used by the actor when the actor has been idle for a while. When the actor is used, tarant can **materialise**
-the actor again so it can be used.
+You may be thinking: what happens when I have billions of counters? An application can easily run out of memory. Fortunately, Tarant can
+**evict** actors, releasing the memory used by the actor, when the actor has been idle for a while. When the actor is used at a later time, Tarant can **materialise**
+the actor so it can be used again.
 
-Using more persistent memory has important benefits, avoiding fragmentation and improving cacheability. However, this is taken already by tarant, you can just use it.
-When designing an application, just think as your business objects as actors, and that's it. This reasoning is pretty complex at the beginning, but the brain gets used
-to it.
+Using more persistent memory has important benefits, avoiding fragmentation and improving cacheability. This is already taken care of by Tarant, you can just use it.
+When designing an application, just think of your business objects as actors, and that's it. This reasoning can seem complex at first, but one soon gets the hang of it.
 
 So, to summarise:
 
 * **An actor is similar to an object**: An actor holds both data and behaviour in one place.
 * **An actor is active**: Does not require external stimulus to do business logic.
-* **An actor is concurrency-safe**: You can just send the actor messages from anywhere safely without thinking on race conditions.
-* **An actor is message driven**: An actor does not care where a message is coming from, just that it ends in it's mailbox.
+* **An actor is concurrency-safe**: You can send the actor messages from anywhere, safely, without thinking about race conditions.
+* **An actor is message driven**: An actor does not care where a message comes from, only that it ends up in its mailbox.
 * **An actor lifecycle is long**: From seconds, to hours, to days, to months, to years.
 
 ------
@@ -137,4 +136,4 @@ So, to summarise:
 
 [^1] A message is how we call method calls to actors.
 
-[^2] An Actor System is where all the actors live. We will dive later in the concept.
+[^2] An Actor System is where all the actors live. We will dive into this concept later.
